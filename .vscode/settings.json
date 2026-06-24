@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^cd /c/Users/viral/Downloads/lll/frontend && npm install$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

@@ -1,0 +1,182 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.14, pytest-8.4.1, pluggy-1.6.0 -- C:\Users\viral\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\viral\Downloads\lll
+plugins: anyio-4.9.0, dash-3.3.0, Faker-37.6.0, langsmith-0.4.23, asyncio-1.1.0, cov-6.2.1, mock-3.14.1
+asyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 137 items
+
+tests/test_backend_api.py::TestBackendAPI::test_health_check_endpoint PASSED [  0%]
+tests/test_backend_api.py::TestBackendAPI::test_voice_upload_endpoint PASSED [  1%]
+tests/test_backend_api.py::TestBackendAPI::test_invalid_voice_upload PASSED [  2%]
+tests/test_backend_api.py::TestBackendAPI::test_voice_processing_endpoint PASSED [  2%]
+tests/test_backend_api.py::TestBackendAPI::test_ai_response_endpoint PASSED [  3%]
+tests/test_backend_api.py::TestBackendAPI::test_history_endpoint PASSED  [  4%]
+tests/test_backend_api.py::TestBackendAPI::test_delete_history_endpoint PASSED [  5%]
+tests/test_backend_api.py::TestBackendAPI::test_invalid_endpoint PASSED  [  5%]
+tests/test_backend_api.py::TestBackendAPI::test_error_handling_500 PASSED [  6%]
+tests/test_backend_api.py::TestBackendAPI::test_large_file_upload PASSED [  7%]
+tests/test_backend_api.py::TestBackendAPI::test_concurrent_requests PASSED [  8%]
+tests/test_backend_api.py::TestBackendAPI::test_rate_limiting PASSED     [  8%]
+tests/test_backend_api.py::TestAuthentication::test_valid_api_key PASSED [  9%]
+tests/test_backend_api.py::TestAuthentication::test_missing_api_key PASSED [ 10%]
+tests/test_backend_api.py::TestAuthentication::test_invalid_api_key PASSED [ 10%]
+tests/test_backend_api.py::TestAuthentication::test_token_expiration PASSED [ 11%]
+tests/test_backend_api.py::TestAuthentication::test_token_refresh PASSED [ 12%]
+tests/test_backend_api.py::TestDataValidation::test_validate_audio_format PASSED [ 13%]
+tests/test_backend_api.py::TestDataValidation::test_validate_request_payload PASSED [ 13%]
+tests/test_backend_api.py::TestDataValidation::test_sanitize_user_input PASSED [ 14%]
+tests/test_backend_api.py::TestDataValidation::test_max_input_length PASSED [ 15%]
+tests/test_backend_api.py::TestDataValidation::test_unicode_handling PASSED [ 16%]
+tests/test_backend_api.py::TestDataValidation::test_empty_input_rejection PASSED [ 16%]
+tests/test_backend_api.py::TestErrorHandling::test_database_connection_error PASSED [ 17%]
+tests/test_backend_api.py::TestErrorHandling::test_external_api_timeout PASSED [ 18%]
+tests/test_backend_api.py::TestErrorHandling::test_malformed_json PASSED [ 18%]
+tests/test_backend_api.py::TestErrorHandling::test_missing_required_fields PASSED [ 19%]
+tests/test_backend_api.py::TestErrorHandling::test_type_mismatch_errors PASSED [ 20%]
+tests/test_backend_api.py::TestErrorHandling::test_disk_space_error PASSED [ 21%]
+tests/test_backend_api.py::TestPerformance::test_response_time_threshold PASSED [ 21%]
+tests/test_backend_api.py::TestPerformance::test_memory_usage_baseline PASSED [ 22%]
+tests/test_backend_api.py::TestPerformance::test_cpu_usage_baseline PASSED [ 23%]
+tests/test_backend_api.py::TestPerformance::test_database_query_performance PASSED [ 24%]
+tests/test_backend_unit.py::TestAudioProcessing::test_extract_audio_features PASSED [ 24%]
+tests/test_backend_unit.py::TestAudioProcessing::test_convert_audio_format PASSED [ 25%]
+tests/test_backend_unit.py::TestAudioProcessing::test_normalize_audio_levels PASSED [ 26%]
+tests/test_backend_unit.py::TestAudioProcessing::test_detect_silence PASSED [ 27%]
+tests/test_backend_unit.py::TestAudioProcessing::test_audio_validation_pass PASSED [ 27%]
+tests/test_backend_unit.py::TestAudioProcessing::test_audio_validation_fail PASSED [ 28%]
+tests/test_backend_unit.py::TestTranscription::test_transcribe_audio_basic PASSED [ 29%]
+tests/test_backend_unit.py::TestTranscription::test_transcribe_with_background_noise PASSED [ 29%]
+tests/test_backend_unit.py::TestTranscription::test_transcribe_multiple_speakers PASSED [ 30%]
+tests/test_backend_unit.py::TestTranscription::test_transcribe_different_languages PASSED [ 31%]
+tests/test_backend_unit.py::TestTranscription::test_transcription_confidence_score PASSED [ 32%]
+tests/test_backend_unit.py::TestTranscription::test_transcription_empty_audio PASSED [ 32%]
+tests/test_backend_unit.py::TestTranscription::test_transcription_very_long_audio PASSED [ 33%]
+tests/test_backend_unit.py::TestAIResponse::test_generate_response_basic PASSED [ 34%]
+tests/test_backend_unit.py::TestAIResponse::test_generate_response_with_context PASSED [ 35%]
+tests/test_backend_unit.py::TestAIResponse::test_generate_response_edge_cases PASSED [ 35%]
+tests/test_backend_unit.py::TestAIResponse::test_response_length_limits PASSED [ 36%]
+tests/test_backend_unit.py::TestAIResponse::test_response_format_validation PASSED [ 37%]
+tests/test_backend_unit.py::TestAIResponse::test_response_safety_filters PASSED [ 37%]
+tests/test_backend_unit.py::TestAIResponse::test_response_tone_consistency PASSED [ 38%]
+tests/test_backend_unit.py::TestTextToSpeech::test_synthesize_audio_basic PASSED [ 39%]
+tests/test_backend_unit.py::TestTextToSpeech::test_synthesize_with_different_voices PASSED [ 40%]
+tests/test_backend_unit.py::TestTextToSpeech::test_synthesize_with_speed_control PASSED [ 40%]
+tests/test_backend_unit.py::TestTextToSpeech::test_synthesize_with_emotion PASSED [ 41%]
+tests/test_backend_unit.py::TestTextToSpeech::test_synthesize_audio_quality PASSED [ 42%]
+tests/test_backend_unit.py::TestTextToSpeech::test_synthesize_special_characters PASSED [ 43%]
+tests/test_backend_unit.py::TestTextToSpeech::test_synthesize_unicode_text PASSED [ 43%]
+tests/test_backend_unit.py::TestDatabaseOperations::test_save_conversation PASSED [ 44%]
+tests/test_backend_unit.py::TestDatabaseOperations::test_load_conversation PASSED [ 45%]
+tests/test_backend_unit.py::TestDatabaseOperations::test_update_conversation PASSED [ 45%]
+tests/test_backend_unit.py::TestDatabaseOperations::test_delete_conversation PASSED [ 46%]
+tests/test_backend_unit.py::TestDatabaseOperations::test_query_user_history PASSED [ 47%]
+tests/test_backend_unit.py::TestDatabaseOperations::test_clear_all_history PASSED [ 48%]
+tests/test_backend_unit.py::TestDatabaseOperations::test_database_transaction_rollback PASSED [ 48%]
+tests/test_backend_unit.py::TestDatabaseOperations::test_database_connection_pooling PASSED [ 49%]
+tests/test_backend_unit.py::TestUtilityFunctions::test_timestamp_generation PASSED [ 50%]
+tests/test_backend_unit.py::TestUtilityFunctions::test_uuid_generation PASSED [ 51%]
+tests/test_backend_unit.py::TestUtilityFunctions::test_file_path_validation PASSED [ 51%]
+tests/test_backend_unit.py::TestUtilityFunctions::test_json_serialization PASSED [ 52%]
+tests/test_backend_unit.py::TestUtilityFunctions::test_error_message_formatting PASSED [ 53%]
+tests/test_backend_unit.py::TestUtilityFunctions::test_logging_functionality PASSED [ 54%]
+tests/test_backend_unit.py::TestUtilityFunctions::test_config_loading PASSED [ 54%]
+tests/test_backend_unit.py::TestUtilityFunctions::test_environment_variable_handling PASSED [ 55%]
+tests/test_backend_unit.py::TestDataModels::test_user_model_creation PASSED [ 56%]
+tests/test_backend_unit.py::TestDataModels::test_conversation_model_creation PASSED [ 56%]
+tests/test_backend_unit.py::TestDataModels::test_message_model_creation PASSED [ 57%]
+tests/test_backend_unit.py::TestDataModels::test_model_validation PASSED [ 58%]
+tests/test_backend_unit.py::TestDataModels::test_model_serialization PASSED [ 59%]
+tests/test_backend_unit.py::TestDataModels::test_model_relationships PASSED [ 59%]
+tests/test_backend_unit.py::TestCaching::test_cache_hit PASSED           [ 60%]
+tests/test_backend_unit.py::TestCaching::test_cache_miss PASSED          [ 61%]
+tests/test_backend_unit.py::TestCaching::test_cache_expiration PASSED    [ 62%]
+tests/test_backend_unit.py::TestCaching::test_cache_invalidation PASSED  [ 62%]
+tests/test_backend_unit.py::TestCaching::test_cache_size_limit PASSED    [ 63%]
+tests/test_integration.py::TestFullVoiceConversationFlow::test_complete_conversation_cycle PASSED [ 64%]
+tests/test_integration.py::TestFullVoiceConversationFlow::test_conversation_with_multiple_turns PASSED [ 64%]
+tests/test_integration.py::TestFullVoiceConversationFlow::test_conversation_context_preservation PASSED [ 65%]
+tests/test_integration.py::TestFullVoiceConversationFlow::test_conversation_history_tracking PASSED [ 66%]
+tests/test_integration.py::TestFullVoiceConversationFlow::test_conversation_cleanup_on_completion PASSED [ 67%]
+tests/test_integration.py::TestFrontendBackendIntegration::test_send_voice_data_to_backend PASSED [ 67%]
+tests/test_integration.py::TestFrontendBackendIntegration::test_receive_response_from_backend PASSED [ 68%]
+tests/test_integration.py::TestFrontendBackendIntegration::test_websocket_connection_stability PASSED [ 69%]
+tests/test_integration.py::TestFrontendBackendIntegration::test_connection_reconnection_handling PASSED [ 70%]
+tests/test_integration.py::TestFrontendBackendIntegration::test_request_response_pairing PASSED [ 70%]
+tests/test_integration.py::TestFrontendBackendIntegration::test_concurrent_sessions PASSED [ 71%]
+tests/test_integration.py::TestDataPersistence::test_save_and_retrieve_conversation PASSED [ 72%]
+tests/test_integration.py::TestDataPersistence::test_export_conversation_data PASSED [ 72%]
+tests/test_integration.py::TestDataPersistence::test_import_conversation_data PASSED [ 73%]
+tests/test_integration.py::TestDataPersistence::test_data_consistency_across_restarts PASSED [ 74%]
+tests/test_integration.py::TestDataPersistence::test_backup_and_restore PASSED [ 75%]
+tests/test_integration.py::TestDataPersistence::test_database_migration PASSED [ 75%]
+tests/test_integration.py::TestExternalIntegrations::test_speech_recognition_service PASSED [ 76%]
+tests/test_integration.py::TestExternalIntegrations::test_ai_language_model PASSED [ 77%]
+tests/test_integration.py::TestExternalIntegrations::test_text_to_speech_service PASSED [ 78%]
+tests/test_integration.py::TestExternalIntegrations::test_external_service_fallback PASSED [ 78%]
+tests/test_integration.py::TestExternalIntegrations::test_external_service_error_handling PASSED [ 79%]
+tests/test_integration.py::TestEndToEndScenarios::test_user_greeting_scenario PASSED [ 80%]
+tests/test_integration.py::TestEndToEndScenarios::test_user_question_scenario PASSED [ 81%]
+tests/test_integration.py::TestEndToEndScenarios::test_multi_language_scenario PASSED [ 81%]
+tests/test_integration.py::TestEndToEndScenarios::test_error_recovery_scenario PASSED [ 82%]
+tests/test_integration.py::TestEndToEndScenarios::test_user_session_management PASSED [ 83%]
+tests/test_integration.py::TestEndToEndScenarios::test_user_preferences_scenario PASSED [ 83%]
+tests/test_integration.py::TestPerformanceIntegration::test_end_to_end_latency PASSED [ 84%]
+tests/test_integration.py::TestPerformanceIntegration::test_throughput_under_load PASSED [ 85%]
+tests/test_integration.py::TestPerformanceIntegration::test_memory_stability_long_session PASSED [ 86%]
+tests/test_integration.py::TestPerformanceIntegration::test_resource_cleanup PASSED [ 86%]
+tests/test_integration.py::TestSecurityIntegration::test_end_to_end_encryption PASSED [ 87%]
+tests/test_integration.py::TestSecurityIntegration::test_sql_injection_prevention PASSED [ 88%]
+tests/test_integration.py::TestSecurityIntegration::test_xss_prevention PASSED [ 89%]
+tests/test_integration.py::TestSecurityIntegration::test_csrf_protection PASSED [ 89%]
+tests/test_integration.py::TestSecurityIntegration::test_data_privacy PASSED [ 90%]
+tests/test_integration.py::TestSecurityIntegration::test_secure_session_handling PASSED [ 91%]
+tests/test_integration.py::TestErrorRecovery::test_graceful_degradation PASSED [ 91%]
+tests/test_integration.py::TestErrorRecovery::test_automatic_retry_mechanism PASSED [ 92%]
+tests/test_integration.py::TestErrorRecovery::test_user_notification_on_error PASSED [ 93%]
+tests/test_integration.py::TestErrorRecovery::test_state_recovery_after_crash PASSED [ 94%]
+tests/test_smoke.py::test_backend_pycache_exists PASSED                  [ 94%]
+tests/test_smoke.py::test_backend_routes_exists PASSED                   [ 95%]
+tests/test_smoke.py::test_frontend_lockfile_exists PASSED                [ 96%]
+tests/test_smoke.py::test_license_present PASSED                         [ 97%]
+tests/test_smoke.py::test_backend_structure PASSED                       [ 97%]
+tests/test_smoke.py::test_frontend_structure PASSED                      [ 98%]
+tests/test_smoke.py::test_tests_directory PASSED                         [ 99%]
+tests/test_smoke.py::test_test_files_exist PASSED                        [100%]
+
+============================= 137 passed in 0.33s =============================
+Running backend tests with pytest...
+Running frontend tests with npm...
+Traceback (most recent call last):
+  File "C:\Users\viral\Downloads\lll\run.py", line 45, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\viral\Downloads\lll\run.py", line 40, in main
+    run_frontend_tests()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\viral\Downloads\lll\run.py", line 33, in run_frontend_tests
+    result = subprocess.run(npm_cmd, cwd=FRONTEND_DIR)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\subprocess.py", line 554, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified

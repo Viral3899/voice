@@ -1,17 +1,17 @@
-# Jest configuration for frontend tests
-export default {
+// Jest configuration for frontend tests
+module.exports = {
   testEnvironment: 'jsdom',
-  roots: ['<rootDir>/tests'],
-  testMatch: ['**/__tests__/**/*.js', '**/?(*.)+(spec|test).js'],
+  roots: ['<rootDir>'],
+  testMatch: ['**/test_frontend_unit.js', '**/test_frontend_integration.js'],
   moduleNameMapper: {
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/__mocks__/fileMock.js',
   },
-  setupFilesAfterEnv: ['<rootDir>/tests/setup.js'],
+  setupFilesAfterEnv: ['<rootDir>/setup.js'],
   collectCoverageFrom: [
-    'src/**/*.{js,jsx}',
-    '!src/index.js',
-    '!src/reportWebVitals.js',
+    '../frontend/src/**/*.{js,jsx}',
+    '!../frontend/src/index.js',
+    '!../frontend/src/reportWebVitals.js',
   ],
   coverageThreshold: {
     global: {
@@ -24,7 +24,7 @@ export default {
   transform: {
     '^.+\\.[jt]sx?$': 'babel-jest',
   },
-  moduleDirectories: ['node_modules', 'src'],
+  moduleDirectories: ['node_modules', '../frontend/src'],
   testTimeout: 5000,
   verbose: true,
 };
