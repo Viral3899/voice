@@ -1,33 +1,43 @@
-"""Minimal database access layer for the voice AI agent."""
+from sqlalchemy import create_engine
 
-class Database:
-    def __init__(self, url="sqlite:///:memory:"):
-        self.url = url
-        self.connected = False
-        self.storage = {}
+from sqlalchemy.orm import declarative_base
 
-    def connect(self):
-        self.connected = True
-        return self
+from sqlalchemy.orm import sessionmaker
 
-    def query(self, query_text, *params, **kwargs):
-        return []
+from config import settings
 
-    def insert(self, table, data):
-        self.storage.setdefault(table, []).append(data)
-        return data
 
-    def update(self, table, record_id, data):
-        items = self.storage.get(table, [])
-        for index, item in enumerate(items):
-            if item.get("id") == record_id:
-                items[index] = {**item, **data}
-                return items[index]
-        return None
+engine = create_engine(
 
-    def delete(self, table, record_id):
-        items = self.storage.get(table, [])
-        for index, item in enumerate(items):
-            if item.get("id") == record_id:
-                return items.pop(index)
-        return None
+    settings.DATABASE_URL,
+
+    connect_args={"check_same_thread": False}
+
+)
+
+
+SessionLocal = sessionmaker(
+
+    autocommit=False,
+
+    autoflush=False,
+
+    bind=engine
+
+)
+
+
+Base = declarative_base()
+
+
+def get_db():
+
+    db = SessionLocal()
+
+    try:
+
+        yield db
+
+    finally:
+
+        db.close()
